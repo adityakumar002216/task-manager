@@ -12,14 +12,18 @@ function TaskItem({ task, onDelete, onEdit }) {
   };
 
   return (
-    <div className={`task ${status}`}>
-      <h3>{title}</h3>
-      <p>{description}</p>
+    <div className="itemshow">
+      <div>
+      <h3>Title : {title}</h3>
+      <h4>Description : {description} </h4>
       <p>Due: {new Date(dueDate).toLocaleDateString()}</p>
       <p>Priority: {priority}</p>
       <p>Status: {status}</p>
+      <div className="ED">
       <button onClick={handleEdit}>Edit</button>
       <button onClick={handleDelete}>Delete</button>
+      </div>
+      </div>
     </div>
   );
 }

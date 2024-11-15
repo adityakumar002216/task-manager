@@ -17,8 +17,12 @@
   }
   
   .task-list {
-    width: 30%;
-    border: 1px solid #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 18px;
+    
+    width: 25%;
+    border: 1px solid #3b3939;
     padding: 10px;
     border-radius: 5px;
   }
@@ -30,7 +34,7 @@
   form input,
   form textarea,
   form select {
-    width: 100%;
+    width: 95%;
     margin: 5px 0;
     padding: 10px;
   }
@@ -42,10 +46,20 @@
     border: none;
     cursor: pointer;
   }
-  
-  .task-section{
-    display:flex;
-    column-gap:30px;
-    flex: wrap;
+  .ED{
+    display: flex;
+    justify-content: space-between;
   }
+  .itemshow{
+    display: flex;
+    flex-wrap: wrap;    
+    margin-left: 15px;
+  }
+  .flex{
+    display: flex;
+    flex-wrap:wrap;
+    row-gap: 12px;
+  }
+  
+  
   
