@@ -1,14 +1,15 @@
 import React from 'react';
 
 function TaskItem({ task, onDelete, onEdit }) {
-  const { title, description, dueDate, priority, status, id } = task;
+  let { title, description, dueDate, priority, status, id } = task;
 
   const handleEdit = () => {
-    onEdit(task); // Send the task to be edited
+    onEdit(task); // 
   };
-
+  
   const handleDelete = () => {
     onDelete(id); // Delete the task
+   
   };
 
   return (
@@ -20,8 +21,8 @@ function TaskItem({ task, onDelete, onEdit }) {
       <p>Priority: {priority}</p>
       <p>Status: {status}</p>
       <div className="ED">
-      <button onClick={handleEdit}>Edit</button>
-      <button onClick={handleDelete}>Delete</button>
+      <button onClick={handleEdit} className='editB'>Edit</button>
+      <button onClick={handleDelete} className='deleteB'>Delete</button>
       </div>
       </div>
     </div>

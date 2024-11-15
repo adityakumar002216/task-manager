@@ -59,7 +59,11 @@ function App() {
         
         <h1>Task Dashboard</h1>
         
-        {/* Search and Filter */}
+        <div className='mainflex'>
+        <div>
+        <TaskForm addTask={addTask} editTask={editTask} taskToEdit={taskToEdit} data={taskToEdit} />
+        </div>
+        <div>
         <div className='header'>
           <input
             type="text"
@@ -86,18 +90,17 @@ function App() {
             <option value="completed">Completed</option>
           </select>
         </div>
+        </div>
         
-        {/* Task Form */}
-        <TaskForm addTask={addTask} editTask={editTask} taskToEdit={taskToEdit} data={taskToEdit} />
-
-        {/* Dashboard */}
+        <div className='task-ListName'>
         <Routes>
           <Route
             path="/"
             element={<List tasks={filteredTasks} onDelete={deleteTask} onEdit={handleEdit} />}
           />
         </Routes>
-        
+        </div>
+        </div>
       </div>
       
     </Router>

@@ -9,7 +9,7 @@ function List({ tasks, onDelete, onEdit }) {
         {tasks.length === 0 ? <p>No tasks found.</p> : 
           tasks.map((task) => (
             <div className="task-list">
-            <TaskItem key={task.id} task={task} onDelete={onDelete} onEdit={onEdit} />
+            <TaskItem className='innerintem' key={task.id} task={task} onDelete={onDelete} onEdit={onEdit} />
             </div>
           ))
         }
