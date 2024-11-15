@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function TaskForm({ addTask, editTask, taskToEdit }) {
-  const [title, setTitle] = useState(taskToEdit ? taskToEdit.title : '');
-  const [description, setDescription] = useState(taskToEdit ? taskToEdit.description : '');
-  const [dueDate, setDueDate] = useState(taskToEdit ? taskToEdit.dueDate : '');
-  const [priority, setPriority] = useState(taskToEdit ? taskToEdit.priority : 'Medium');
-  const [status, setStatus] = useState(taskToEdit ? taskToEdit.status : 'upcoming');
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [dueDate, setDueDate] = useState('');
+  const [priority, setPriority] = useState('Medium');
+  const [status, setStatus] = useState('upcoming');
+
+  // If taskToEdit is provided, update the state accordingly
+  useEffect(() => {
+    if (taskToEdit) {
+      setTitle(taskToEdit.title);
+      setDescription(taskToEdit.description);
+      setDueDate(taskToEdit.dueDate);
+      setPriority(taskToEdit.priority);
+      setStatus(taskToEdit.status);
+    }
+  }, [taskToEdit]); // This will run when taskToEdit changes
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,9 +26,9 @@ function TaskForm({ addTask, editTask, taskToEdit }) {
       description,
       dueDate,
       priority,
-      status
+      status,
     };
-    
+
     if (taskToEdit) {
       editTask(newTask);
     } else {

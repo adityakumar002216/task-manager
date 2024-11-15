@@ -30,6 +30,7 @@ function App() {
     const updatedTasks = tasks.map((task) =>
       task.id === editedTask.id ? editedTask : task
     );
+    
     setTasks(updatedTasks);
     setTaskToEdit(null); // Clear the taskToEdit state after editing
   };
@@ -47,7 +48,9 @@ function App() {
   });
 
   const handleEdit = (task) => {
+   <TaskForm addTask={addTask} editTask={editTask} taskToEdit={taskToEdit} data={task}/>
     setTaskToEdit(task);
+    
   };
 
   return (
@@ -85,7 +88,7 @@ function App() {
         </div>
         
         {/* Task Form */}
-        <TaskForm addTask={addTask} editTask={editTask} taskToEdit={taskToEdit} />
+        <TaskForm addTask={addTask} editTask={editTask} taskToEdit={taskToEdit} data={taskToEdit} />
 
         {/* Dashboard */}
         <Routes>

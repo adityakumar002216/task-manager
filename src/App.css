@@ -1,0 +1,51 @@
+.App {
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    width: 736px;
+    height: auto;
+    margin-left: 300px;
+  }
+  h1{
+    text-align: center;
+  }
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(rgb(166, 40, 40));
+  }
+  
+  .task-list {
+    width: 30%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  button {
+    margin-top: 5px;
+  }
+  
+  form input,
+  form textarea,
+  form select {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+  }
+  
+  form button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .task-section{
+    display:flex;
+    column-gap:30px;
+    flex: wrap;
+  }
+  
